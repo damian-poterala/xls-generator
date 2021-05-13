@@ -1,38 +1,59 @@
-<div class="p-grid">
-    <div class="p-col-12">
-        <div class="p-fluid p-formgrid p-grid">
-            <div class="p-field p-col">
-                <label for="reportName" class="label">Report name:</label>
-                <input pInputText type="text" placeholder="Name..." [style]="{ width: '100%' }" class="p-inputtext-sm">
+<form [formGroup]="form">
+    <div class="p-grid">
+        <div class="p-col-12">
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col">
+                    <label for="reportName" class="label">Report name:</label>
+                    <input pInputText type="text" placeholder="Name..." [style]="{ width: '100%' }" class="p-inputtext-sm">
+                </div>
+                <div class="p-field p-col">
+                    <label for="reportFileName" class="label">Report file name:</label>
+                    <input pInputText type="text" placeholder="Name..." [style]="{ width: '100%' }" class="p-inputtext-sm">
+                </div>
+                <div class="p-field p-col">
+                    <label for="reportSheetName" class="label">Report sheet name:</label>
+                    <input pInputText type="text" placeholder="Name..." [style]="{ width: '100%' }" class="p-inputtext-sm">
+                </div>
             </div>
-            <div class="p-field p-col">
-                <label for="reportFileName" class="label">Report file name:</label>
-                <input pInputText type="text" placeholder="Name..." [style]="{ width: '100%' }" class="p-inputtext-sm">
+        </div>
+        <div class="p-col-12">
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col">
+                    <label for="colorForHeader">Color for the header:</label><br>
+                    <p-colorPicker class="p-inputtext-sm"></p-colorPicker>
+                </div>
+                <div class="p-field p-col">
+                    <label for="headerCentering">Header centering:</label>
+                    <input pInputText type="text" placeholder="Yes/No" [style]="{ width: '100%' }" class="p-inputtext-sm">
+                </div>
+                <div class="p-field p-col">
+                    <label for="borderForHeaders">Border for headers:</label>
+                    <input pInputText type="text" placeholder="Yes/No" [style]="{ width: '100%' }" class="p-inputtext-sm">
+                </div>
+                <div class="p-field p-col">
+                    <label for="stickyHeader">Sticky header:</label>
+                    <input pInputText type="text" placeholder="Yes/No" [style]="{ width: '100%' }" class="p-inputtext-sm">
+                </div>
             </div>
+        </div>
+        <div class="p-col-12">
             <div class="p-field p-col">
-                <label for="reportSheetName" class="label">Report sheet name:</label>
-                <input pInputText type="text" placeholder="Name..." [style]="{ width: '100%' }" class="p-inputtext-sm">
+                <label for="amountHeaders">Amount headers:</label>
+                <input formControlName="amountHeaders" pInputText type="text" placeholder="Amount" [style]="{ width: '100%' }" class="p-inputtext-sm">
+            </div>
+        </div>
+        <div class="p-col-12">
+            <button (click)="generateInputsWithHeadersName()"></button>
+        </div>
+        <div class="p-col-12" formArrayName="headersName">
+            <div class="p-grid">
+                <div class="p-col-12" *ngFor="let temp of template.controls; let i = index">
+                    <div class="p-fluid p-formgrid p-grid" [formGroupName]="i">
+                        <label for="headerColName-{{ i }}">Name header col - {{ i }}</label>
+                        <input pInputText id="headerColName-{{ i }}" formControlName="nameHeader" type="text">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="p-col-12">
-        <div class="p-fluid p-formgrid p-grid">
-            <div class="p-field p-col">
-                <label for="colorForHeader">Color for the header:</label><br>
-                <p-colorPicker class="p-inputtext-sm"></p-colorPicker>
-            </div>
-            <div class="p-field p-col">
-                <label for="headerCentering">Header centering:</label>
-                <input pInputText type="text" placeholder="Yes/No" [style]="{ width: '100%' }" class="p-inputtext-sm">
-            </div>
-            <div class="p-field p-col">
-                <label for="borderForHeaders">Border for headers:</label>
-                <input pInputText type="text" placeholder="Yes/No" [style]="{ width: '100%' }" class="p-inputtext-sm">
-            </div>
-            <div class="p-field p-col">
-                <label for="stickyHeader">Sticky header:</label>
-                <input pInputText type="text" placeholder="Yes/No" [style]="{ width: '100%' }" class="p-inputtext-sm">
-            </div>
-        </div>
-    </div>
-</div>
+</form>
