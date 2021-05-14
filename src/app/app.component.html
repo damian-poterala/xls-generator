@@ -24,15 +24,15 @@
                 </div>
                 <div class="p-field p-col">
                     <label for="headerCentering">Header centering:</label>
-                    <input formControlName="centerHeader" pInputText type="text" placeholder="Yes/No" [style]="{ width: '100%' }" class="p-inputtext-sm">
+                    <p-dropdown formControlName="centerHeader" [options]="yesOrNo" optionLabel="label" id="headerCentering" placeholder="Select" [style]="{ width: '100%' }" class="p-inputtext-sm"></p-dropdown>
                 </div>
                 <div class="p-field p-col">
                     <label for="borderForHeaders">Border for headers:</label>
-                    <input formControlName="borderHeader" pInputText type="text" placeholder="Yes/No" [style]="{ width: '100%' }" class="p-inputtext-sm">
+                    <p-dropdown formControlName="borderHeader" [options]="yesOrNo" optionLabel="label" id="borderForHeaders" placeholder="Select" [style]="{ width: '100%' }" class="p-inputtext-sm"></p-dropdown>
                 </div>
                 <div class="p-field p-col">
                     <label for="stickyHeader">Sticky header:</label>
-                    <input formControlName="stickyHeader" pInputText type="text" placeholder="Yes/No" [style]="{ width: '100%' }" class="p-inputtext-sm">
+                    <p-dropdown formControlName="stickyHeader" [options]="yesOrNo" optionLabel="label" id="stickyHeader" placeholder="Select" [style]="{ width: '100%' }" class="p-inputtext-sm"></p-dropdown>
                 </div>
             </div>
         </div>
