@@ -3,7 +3,8 @@ import { FormArray, ReactiveFormsModule, FormGroup, FormControl, Validators, For
 
 export class TemplateRowForm {
   [key: string]: AbstractControl;
-  nameHeader = new FormControl('', Validators.required);
+  nameHeader  = new FormControl('', Validators.required);
+  aliasHeader = new FormControl('', Validators.required);
 }
 
 @Component({
@@ -18,6 +19,7 @@ export class AppComponent {
     reportFileName  : new FormControl(''),
     reportSheetName : new FormControl(''),
     colorHeader     : new FormControl(''),
+    centerHeader    : new FormControl(''),
     borderHeader    : new FormControl(''),
     stickyHeader    : new FormControl(''),
     amountHeaders   : new FormControl(''),
@@ -59,7 +61,11 @@ export class AppComponent {
     for(var i = 0; i < this.form.get('amountHeaders')?.value; i++) {
       this.addedHeadersName();
     }
+  }
 
+  generateFile() {
+    console.log('Generate file');
+    console.log('Form: ', this.form.value);
   }
 
 }

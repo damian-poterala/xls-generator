@@ -11,6 +11,7 @@ import { AppComponent     } from './app.component';
 import { InputTextModule   } from 'primeng/inputtext';
 import { DropdownModule    } from 'primeng/dropdown';
 import { ColorPickerModule } from 'primeng/colorpicker';
+import { ButtonModule      } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ColorPickerModule } from 'primeng/colorpicker';
     InputTextModule,
     DropdownModule,
     ColorPickerModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
