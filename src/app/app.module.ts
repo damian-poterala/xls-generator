@@ -12,6 +12,7 @@ import { InputTextModule   } from 'primeng/inputtext';
 import { DropdownModule    } from 'primeng/dropdown';
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { ButtonModule      } from 'primeng/button';
+import { DividerModule     } from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ButtonModule      } from 'primeng/button';
     DropdownModule,
     ColorPickerModule,
     ButtonModule,
+    DividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
